@@ -599,7 +599,7 @@ img {
   .sl-social.bg-white .social {
     background: #fff;
     border-radius: 50%; }
-    .sl-social.bg-white .social:hover .fa {
+    .sl-social.bg-white .social:hover .change {
       color: #3dd0d8;
       transition: all 0.3s ease-out; }
   .sl-social .social {
@@ -609,7 +609,7 @@ img {
     line-height: 41px;
     margin: 15px 0;
     text-align: center; }
-    .sl-social .social .fa {
+    .sl-social .social .change {
       transition: all 0.3s ease-out; }
 
 .page-name {

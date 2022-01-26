@@ -1,18 +1,13 @@
 "use strict";
 
-import * as THREE from '../../assets/plugins/three.js/build/three.module.js';
+import * as THREE from '../plugins/three.js/build/three.module.js';
 import { GLTFLoader } from '../plugins/three.js/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from '../plugins/three.js/examples/jsm/controls/OrbitControls.js';
 import { RGBELoader } from '../plugins/three.js/examples/jsm/loaders/RGBELoader.js';
-import { GUI } from '../plugins/three.js/examples/jsm/libs/dat.gui.module.js';
-
- 
-let gltfLoader, controls, scene, canvas, camera, renderer,model
+import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/RoomEnvironment.js';
 
 
-const gui = new GUI()
-
-
+let gltfLoader, controls, scene, canvas, camera, renderer, model
 
 initThreeJs()
 lightGltf()
@@ -21,16 +16,21 @@ controlsGltf();
 animate()
 
 function initThreeJs() {
-    canvas = document.querySelector('#c');
+    canvas = document.querySelector('#chest');
 
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera(55, (window.innerWidth *.35)/( window.innerHeight*.6),1, 1000);
-    camera.position.set(0,2,2) 
+    camera = new THREE.PerspectiveCamera(55, (window.innerWidth * .35) / (window.innerHeight * .6), 1, 1000);
+    camera.position.set(0, 2, 2)
 
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true, });
-    renderer.setSize(window.innerWidth*.35, window.innerHeight*.6)
+    renderer.setSize(window.innerWidth * .35, window.innerHeight * .6)
+    renderer.physicallyCorrectLights = true;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.7;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.VSMShadowMap;
     renderer.outputEncoding = THREE.sRGBEncoding;
 
 
@@ -46,11 +46,14 @@ function initThreeJs() {
 
     //environment
 
+    const rgbeLoader = new THREE.TextureLoader();
+
+    rgbeLoader.load('../assets/gltf/hdr.jpg', function (texture) {
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
-    pmremGenerator.compileEquirectangularShader();
-    const rgbeLoader = new RGBELoader();
-    rgbeLoader.load('../../indiega/assets/gltf/textures/Grass_baseColor.jpeg', function (texture) {
-        const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+        pmremGenerator.compileEquirectangularShader();
+        const environment = new RoomEnvironment();
+        const envMap = pmremGenerator.fromScene(environment).texture;
         scene.environment = envMap;
 
         texture.dispose();
@@ -58,59 +61,47 @@ function initThreeJs() {
 
     });
     canvas.appendChild(renderer.domElement);
-
-
 }
 
 function lightGltf() {
-   const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);
+    const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);
     scene.add(AmbientLight);
 
-const DirectionalLight = new THREE.DirectionalLight(0xFFFFFF, 1);
-DirectionalLight.position.set(0, 10, 0);
-DirectionalLight.target.position.set(-5, 0, 0);
-scene.add(DirectionalLight);
-
-
+    const DirectionalLight = new THREE.DirectionalLight(0xFFFFFF, 0.1);
+    scene.add(DirectionalLight);
 
 }
 
-
-
 function controlsGltf() {
-
     controls = new OrbitControls(camera, renderer.domElement);
-
-
     controls.mouseButtons = {
         LEFT: THREE.MOUSE.ROTATE,
         MIDDLE: THREE.MOUSE.DOLLY,
     }
-
-
     controls.enabled = true;
     controls.enableZoom = false;
     controls.enablePan = false;
-
     controls.maxPolarAngle = Math.PI / 2.5;
     controls.minPolarAngle = Math.PI / 2.5;
-
     controls.enableDamping = false
     controls.screenSpacePanning = false
-
     controls.update();
 }
 
 function loaderGltf() {
-  
+
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
-        '../../assets/gltf/scene.gltf',
+        '../../assets/gltf/chest.gltf',
         function (gltf) {
-            model=gltf.scene
-           model.scale.set(.08, .08, .08)
-           model.position.set(0, .2, 0)
-
+            model = gltf.scene
+            model.scale.set(1.5, 1.5, 1.5)
+            model.position.set(0, -.4, 0)
+            model.traverse((child) => {
+                if (child.isMesh ) {
+                    
+                }
+            });
             scene.add(model);
         }
     )
@@ -120,8 +111,6 @@ function animate() {
     if (model) {
         model.rotation.y += 0.001;
     }
-
     renderer.render(scene, camera);
-
     requestAnimationFrame(animate);
 }
