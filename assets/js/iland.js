@@ -5,8 +5,7 @@ import { GLTFLoader } from '../plugins/three.js/examples/jsm/loaders/GLTFLoader.
 import { OrbitControls } from '../plugins/three.js/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/RoomEnvironment.js';
 
-let gltfLoader, controls, scene, canvas, camera, renderer, model
-let manager = new THREE.LoadingManager();
+let gltfLoader, controls, scene, canvas, camera, renderer, model,manager;
 
 initThreeJs()
 lightGltf()
@@ -62,22 +61,7 @@ function initThreeJs() {
     canvas.appendChild(renderer.domElement);
 }
 
-function loaderGltf() {
-
-    gltfLoader = new GLTFLoader(manager);
-    gltfLoader.load(
-        '../assets/gltf/Island.gltf',
-        function (gltf) {
-            model = gltf.scene
-            model.scale.set(.08, .08, .08)
-            model.position.set(0, 0.2, 0)
-
-            scene.add(model);
-
-            $(".cssload-loader").delay(400).fadeOut("slow");
-        }
-    )
-}
+manager = new THREE.LoadingManager();
 
 manager.onStart = function (url, itemsLoaded, itemsTotal) {
 
@@ -97,6 +81,25 @@ manager.onError = function (url) {
     console.log('There was an error loading ' + url);
 
 };
+
+function loaderGltf() {
+
+    gltfLoader = new GLTFLoader(manager);
+    gltfLoader.load(
+        '../assets/gltf/Island.gltf',
+        function (gltf) {
+            model = gltf.scene
+            model.scale.set(.08, .08, .08)
+            model.position.set(0, 0.2, 0)
+
+            scene.add(model);
+
+            $(".cssload-loader").delay(400).fadeOut("slow");
+        }
+    )
+}
+
+
 
 function lightGltf() {
     const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);

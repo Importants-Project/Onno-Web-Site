@@ -130,9 +130,9 @@ function loaderGltf() {
             model=gltf.scene
            model.scale.set(1, 1, 1)
            model.position.set(0, -1, 0)
+            scene.add(model);
            $(".cssload-loader").delay(400).fadeOut("slow");
 
-            scene.add(model);
         }
     )
 }
