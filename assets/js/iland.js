@@ -62,56 +62,48 @@ function initThreeJs() {
     canvas.appendChild(renderer.domElement);
 }
 
-
-
-
 function loaderGltf() {
-  
+
     gltfLoader = new GLTFLoader(manager);
     gltfLoader.load(
         '../assets/gltf/Island.gltf',
         function (gltf) {
-            model=gltf.scene
-           model.scale.set(.08, .08, .08)
-           model.position.set(0, 0.2, 0)
+            model = gltf.scene
+            model.scale.set(.08, .08, .08)
+            model.position.set(0, 0.2, 0)
 
             scene.add(model);
         }
     )
 }
 
-manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
 
-	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
-    $("#gltfShow").LoadingOverlay("show", {
-        background: 'red',
-        image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle r="80" cx="500" cy="90"/><circle r="80" cx="500" cy="910"/><circle r="80" cx="90" cy="500"/><circle r="80" cx="910" cy="500"/><circle r="80" cx="212" cy="212"/><circle r="80" cx="788" cy="212"/><circle r="80" cx="212" cy="788"/><circle r="80" cx="788" cy="788"/></svg>`,
-        imageColor: 'red',
-        imageAutoResize: true,
-    });
+    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
+    var winObj = $( window );
 
-    // Hide it after 3 seconds
-        $("#gltfShow").LoadingOverlay("hide");
-  
-};
-
-manager.onLoad = function ( ) {
-
-	console.log( 'Loading complete!');
-  
-
+    winObj.on( 'load', function()
+    {
+        var $preloader = $( '.loader-wrapper' );
+            
+        $preloader.find( '.cssload-loader' ).fadeOut();
+        $preloader.delay( 350 ).fadeOut( 'slow' );
+    } );
+   
 };
 
 
-manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
 
-	console.log( 'Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
+
+manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+
+    console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
 
 };
 
-manager.onError = function ( url ) {
+manager.onError = function (url) {
 
-	console.log( 'There was an error loading ' + url );
+    console.log('There was an error loading ' + url);
 
 };
 
