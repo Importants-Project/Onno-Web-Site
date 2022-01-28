@@ -7,15 +7,20 @@ import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/R
 
 let gltfLoader, controls, scene, canvas, camera, renderer, model;
 var manager = new THREE.LoadingManager();
-
+const progressBar = document.querySelector(".bar")
+const progressBarValue = document.querySelector('.bar__value')
 manager.onStart = function (url, itemsLoaded, itemsTotal) {
     $('.loader-wrapper .cssload-loader').fadeIn();
 
 };
 
 function onProgress(loader) {
-    console.log( loader.loaded / loader.total * 100);
-};
+    if (loader.lengthComputable) {
+        var percentComplete = loader.loaded / loader.total * 100;
+        // console.log(Math.round(percentComplete) + '% downloaded');
+        progressBar.value = Math.round(percentComplete);
+        progressBarValue.innerText = Math.round(percentComplete) + '%';
+    }};
 
 function onError(error) {
     console.log("can't load...");
