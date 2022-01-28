@@ -67,11 +67,21 @@ manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
 
 	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
 
+    $("#island").LoadingOverlay("show", {
+        background: 'transparent',
+        image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle r="80" cx="500" cy="90"/><circle r="80" cx="500" cy="910"/><circle r="80" cx="90" cy="500"/><circle r="80" cx="910" cy="500"/><circle r="80" cx="212" cy="212"/><circle r="80" cx="788" cy="212"/><circle r="80" cx="212" cy="788"/><circle r="80" cx="788" cy="788"/></svg>`,
+        imageColor: 'red',
+        imageAutoResize: true,
+    });
+
+    // Hide it after 3 seconds
+
 };
 
 manager.onLoad = function ( ) {
 
 	console.log( 'Loading complete!');
+    $("#island").LoadingOverlay("hide");
 
 };
 
