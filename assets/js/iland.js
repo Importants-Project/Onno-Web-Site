@@ -9,22 +9,16 @@ let gltfLoader, controls, scene, canvas, camera, renderer, model;
 var manager = new THREE.LoadingManager();
 
 manager.onStart = function (url, itemsLoaded, itemsTotal) {
+    $('.loader-wrapper .cssload-loader').fadeIn();
 
-    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    var winObj = $( window );
-
-    winObj.on( 'load', function()
-    {
-        $( '.loader-wrapper .cssload-loader' ).fadeIn();
-    } );
-   
 };
 
+function onProgress(loader) {
+    console.log( loader.loaded / loader.total * 100);
+};
 
-manager.onError = function (url) {
-
-    console.log('There was an error loading ' + url);
-
+function onError(error) {
+    console.log("can't load...");
 };
 initThreeJs()
 lightGltf()
@@ -95,8 +89,8 @@ function loaderGltf() {
             scene.add(model);
 
             $(".cssload-loader").delay(400).fadeOut("slow");
-        }
-    )
+        }, onProgress, onError)
+
 }
 
 

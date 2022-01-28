@@ -11,16 +11,18 @@ let gltfLoader, controls, scene, canvas, camera, renderer, model
 var manager = new THREE.LoadingManager();
 
 manager.onStart = function (url, itemsLoaded, itemsTotal) {
+    $('.loader-wrapper .cssload-loader').fadeIn();
 
-    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    var winObj = $( window );
-
-    winObj.on( 'load', function()
-    {
-        $( '.loader-wrapper .cssload-loader' ).fadeIn();
-    } );
-   
 };
+
+function onProgress(loader) {
+    console.log( loader.loaded / loader.total * 100);
+};
+
+function onError(error) {
+    console.log("can't load...");
+};
+
 initThreeJs()
 lightGltf()
 loaderGltf();
@@ -61,7 +63,7 @@ function initThreeJs() {
     const rgbeLoader = new THREE.TextureLoader();
 
     rgbeLoader.load('../assets/gltf/hdr.jpg', function (texture) {
-    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+        const pmremGenerator = new THREE.PMREMGenerator(renderer);
 
         pmremGenerator.compileEquirectangularShader();
         const environment = new RoomEnvironment();
@@ -112,8 +114,7 @@ function loaderGltf() {
             $(".cssload-loader").delay(400).fadeOut("slow");
 
             scene.add(model);
-        }
-    )
+        }, onProgress, onError)
 }
 
 function animate() {
