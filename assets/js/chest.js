@@ -8,8 +8,19 @@ import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/R
 
 
 let gltfLoader, controls, scene, canvas, camera, renderer, model
-let manager = new THREE.LoadingManager();
+var manager = new THREE.LoadingManager();
 
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
+
+    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
+    var winObj = $( window );
+
+    winObj.on( 'load', function()
+    {
+        $( '.loader-wrapper .cssload-loader' ).fadeIn();
+    } );
+   
+};
 initThreeJs()
 lightGltf()
 loaderGltf();
@@ -88,19 +99,6 @@ function controlsGltf() {
     controls.screenSpacePanning = false
     controls.update();
 }
-
-
-manager.onStart = function (url, itemsLoaded, itemsTotal) {
-
-    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    var winObj = $( window );
-
-    winObj.on( 'load', function()
-    {
-        $( '.loader-wrapper .cssload-loader' ).fadeIn();
-    } );
-   
-};
 
 function loaderGltf() {
 

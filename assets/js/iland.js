@@ -5,8 +5,27 @@ import { GLTFLoader } from '../plugins/three.js/examples/jsm/loaders/GLTFLoader.
 import { OrbitControls } from '../plugins/three.js/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/RoomEnvironment.js';
 
-let gltfLoader, controls, scene, canvas, camera, renderer, model,manager;
+let gltfLoader, controls, scene, canvas, camera, renderer, model;
+var manager = new THREE.LoadingManager();
 
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
+
+    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
+    var winObj = $( window );
+
+    winObj.on( 'load', function()
+    {
+        $( '.loader-wrapper .cssload-loader' ).fadeIn();
+    } );
+   
+};
+
+
+manager.onError = function (url) {
+
+    console.log('There was an error loading ' + url);
+
+};
 initThreeJs()
 lightGltf()
 loaderGltf()
@@ -61,26 +80,7 @@ function initThreeJs() {
     canvas.appendChild(renderer.domElement);
 }
 
-manager = new THREE.LoadingManager();
 
-manager.onStart = function (url, itemsLoaded, itemsTotal) {
-
-    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    var winObj = $( window );
-
-    winObj.on( 'load', function()
-    {
-        $( '.loader-wrapper .cssload-loader' ).fadeIn();
-    } );
-   
-};
-
-
-manager.onError = function (url) {
-
-    console.log('There was an error loading ' + url);
-
-};
 
 function loaderGltf() {
 
