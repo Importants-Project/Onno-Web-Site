@@ -6,6 +6,7 @@ import { OrbitControls } from '../plugins/three.js/examples/jsm/controls/OrbitCo
 import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/RoomEnvironment.js';
 
 let gltfLoader, controls, scene, canvas, camera, renderer, model
+let manager = new THREE.LoadingManager();
 
 initThreeJs()
 lightGltf()
@@ -62,7 +63,23 @@ function initThreeJs() {
 }
 
 
-const manager = new THREE.LoadingManager();
+
+
+function loaderGltf() {
+  
+    gltfLoader = new GLTFLoader(manager);
+    gltfLoader.load(
+        '../assets/gltf/Island.gltf',
+        function (gltf) {
+            model=gltf.scene
+           model.scale.set(.08, .08, .08)
+           model.position.set(0, 0.2, 0)
+
+            scene.add(model);
+        }
+    )
+}
+
 manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
 
 	console.log( 'Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.' );
@@ -78,12 +95,7 @@ manager.onStart = function ( url, itemsLoaded, itemsTotal ) {
 
 };
 
-manager.onLoad = function ( ) {
 
-	console.log( 'Loading complete!');
-    $("#island").LoadingOverlay("hide");
-
-};
 
 
 manager.onProgress = function ( url, itemsLoaded, itemsTotal ) {
@@ -97,23 +109,6 @@ manager.onError = function ( url ) {
 	console.log( 'There was an error loading ' + url );
 
 };
-
-
-function loaderGltf(manager) {
-  
-    gltfLoader = new GLTFLoader();
-    gltfLoader.load(
-        '../assets/gltf/Island.gltf',
-        function (gltf) {
-            model=gltf.scene
-           model.scale.set(.08, .08, .08)
-           model.position.set(0, 0.2, 0)
-
-            scene.add(model);
-        }
-    )
-}
-
 
 function lightGltf() {
     const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);
