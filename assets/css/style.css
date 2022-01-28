@@ -1291,7 +1291,8 @@ header {
     header .main-menu .menu > li {
       line-height: 140px;
       float: left;
-      margin: 0 30px;
+      /* margin: 0 30px; */
+      margin: 0 15px;
       position: relative; }
       header .main-menu .menu > li:first-child {
         margin-left: 0; }

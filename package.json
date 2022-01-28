@@ -1,0 +1,23 @@
+{
+  "name": "onno-web-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KenanBoyukkishiyev1997/Onno-Web-Site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KenanBoyukkishiyev1997/Onno-Web-Site/issues"
+  },
+  "homepage": "https://github.com/KenanBoyukkishiyev1997/Onno-Web-Site#readme",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
