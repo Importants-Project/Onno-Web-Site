@@ -111,7 +111,7 @@ function loaderGltf() {
   
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
-        '../../assets/gltf/kristalGreen.gltf',
+        '../assets/gltf/kristalGreen.gltf',
         function (gltf) {
             model=gltf.scene
            model.scale.set(.25, .25, .25)

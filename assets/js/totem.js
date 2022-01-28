@@ -108,7 +108,7 @@ function loaderGltf() {
 
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
-        '../../assets/gltf/totem.gltf',
+        '../assets/gltf/totem.gltf',
         function (gltf) {
             model = gltf.scene
     

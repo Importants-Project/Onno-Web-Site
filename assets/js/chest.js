@@ -92,7 +92,7 @@ function loaderGltf() {
 
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
-        '../../assets/gltf/chest.gltf',
+        '../assets/gltf/chest.gltf',
         function (gltf) {
             model = gltf.scene
             model.scale.set(1.5, 1.5, 1.5)
