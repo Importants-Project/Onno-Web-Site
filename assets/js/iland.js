@@ -68,7 +68,7 @@ function loaderGltf() {
   
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
-        '../../assets/gltf/Island.gltf',
+        '../assets/gltf/Island.gltf',
         function (gltf) {
             model=gltf.scene
            model.scale.set(.08, .08, .08)
