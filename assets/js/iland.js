@@ -73,6 +73,8 @@ function loaderGltf() {
             model.position.set(0, 0.2, 0)
 
             scene.add(model);
+
+            $(".cssload-loader").delay(400).fadeOut("slow");
         }
     )
 }
@@ -84,10 +86,7 @@ manager.onStart = function (url, itemsLoaded, itemsTotal) {
 
     winObj.on( 'load', function()
     {
-        var $preloader = $( '.loader-wrapper' );
-            
-        $preloader.find( '.cssload-loader' ).fadeOut();
-        $preloader.delay( 350 ).fadeOut( 'slow' );
+        $( '.loader-wrapper .cssload-loader' ).fadeIn();
     } );
    
 };
