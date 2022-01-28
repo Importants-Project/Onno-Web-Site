@@ -8,6 +8,7 @@ import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/R
 
 
 let gltfLoader, controls, scene, canvas, camera, renderer, model
+let manager = new THREE.LoadingManager();
 
 initThreeJs()
 lightGltf()
@@ -88,20 +89,30 @@ function controlsGltf() {
     controls.update();
 }
 
+
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
+
+    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
+    var winObj = $( window );
+
+    winObj.on( 'load', function()
+    {
+        $( '.loader-wrapper .cssload-loader' ).fadeIn();
+    } );
+   
+};
+
 function loaderGltf() {
 
-    gltfLoader = new GLTFLoader();
+    gltfLoader = new GLTFLoader(manager);
     gltfLoader.load(
         '../assets/gltf/chest.gltf',
         function (gltf) {
             model = gltf.scene
             model.scale.set(1.5, 1.5, 1.5)
             model.position.set(0, -.4, 0)
-            model.traverse((child) => {
-                if (child.isMesh ) {
-                    
-                }
-            });
+            $(".cssload-loader").delay(400).fadeOut("slow");
+
             scene.add(model);
         }
     )

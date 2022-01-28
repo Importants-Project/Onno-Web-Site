@@ -92,14 +92,6 @@ manager.onStart = function (url, itemsLoaded, itemsTotal) {
 };
 
 
-
-
-manager.onProgress = function (url, itemsLoaded, itemsTotal) {
-
-    console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-
-};
-
 manager.onError = function (url) {
 
     console.log('There was an error loading ' + url);

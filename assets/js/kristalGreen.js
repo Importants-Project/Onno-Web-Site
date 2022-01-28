@@ -9,6 +9,7 @@ import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/R
 
  
 let gltfLoader, controls, scene, canvas, camera, renderer,model
+let manager = new THREE.LoadingManager();
 
 
 //const gui = new GUI()
@@ -107,15 +108,30 @@ function controlsGltf() {
     controls.update();
 }
 
+
+manager.onStart = function (url, itemsLoaded, itemsTotal) {
+
+    console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
+    var winObj = $( window );
+
+    winObj.on( 'load', function()
+    {
+        $( '.loader-wrapper .cssload-loader' ).fadeIn();
+    } );
+   
+};
+
+
 function loaderGltf() {
   
-    gltfLoader = new GLTFLoader();
+    gltfLoader = new GLTFLoader(manager);
     gltfLoader.load(
         '../assets/gltf/kristalGreen.gltf',
         function (gltf) {
             model=gltf.scene
            model.scale.set(.25, .25, .25)
            model.position.set(0, -.7, 0)
+           $(".cssload-loader").delay(400).fadeOut("slow");
 
             scene.add(model);
         }
