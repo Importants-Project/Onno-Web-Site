@@ -89,7 +89,7 @@ manager.onError = function ( url ) {
 };
 
 
-function loaderGltf() {
+function loaderGltf(manager) {
   
     gltfLoader = new GLTFLoader();
     gltfLoader.load(
