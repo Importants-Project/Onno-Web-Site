@@ -3,44 +3,18 @@
 import * as THREE from '../plugins/three.js/build/three.module.js';
 import { GLTFLoader } from '../plugins/three.js/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from '../plugins/three.js/examples/jsm/controls/OrbitControls.js';
-import { RGBELoader } from '../plugins/three.js/examples/jsm/loaders/RGBELoader.js';
-//import { GUI } from '../plugins/three.js/examples/jsm/libs/dat.gui.module.js';
 import { RoomEnvironment } from '../plugins/three.js/examples/jsm/environments/RoomEnvironment.js';
 
-
-let gltfLoader, controls, scene, canvas, camera, renderer, model
-var manager = new THREE.LoadingManager();
-const progressBar = document.querySelector(".bar")
-const progressBarValue = document.querySelector('.bar__value')
-manager.onStart = function (url, itemsLoaded, itemsTotal) {
-    $('.loader-wrapper .cssload-loader').fadeIn();
-
-};
-
-function onProgress(loader) {
-    if (loader.lengthComputable) {
-        var percentComplete = loader.loaded / loader.total * 100;
-        // console.log(Math.round(percentComplete) + '% downloaded');
-        progressBar.value = Math.round(percentComplete);
-        progressBarValue.innerText = Math.round(percentComplete) + '%';
-    }};
-
-function onError(error) {
-    console.log("can't load...");
-};
-
-
-//const gui = new GUI()
-
+let gltfLoader, controls, scene, canvas, camera, renderer, model;
 
 initThreeJs()
 lightGltf()
-loaderGltf();
+klassikGltf()
 controlsGltf();
 animate()
 
 function initThreeJs() {
-    canvas = document.querySelector('#totem');
+    canvas = document.querySelector('#island');
 
     scene = new THREE.Scene();
 
@@ -58,6 +32,7 @@ function initThreeJs() {
     renderer.outputEncoding = THREE.sRGBEncoding;
 
 
+
     // window.addEventListener('resize', function () {
     //     camera.aspect = window.innerWidth  / window.innerHeight ;
     //     camera.updateProjectionMatrix();
@@ -69,11 +44,11 @@ function initThreeJs() {
 
     //environment
 
-
     const rgbeLoader = new THREE.TextureLoader();
 
     rgbeLoader.load('../assets/gltf/hdr.jpg', function (texture) {
         const pmremGenerator = new THREE.PMREMGenerator(renderer);
+
         pmremGenerator.compileEquirectangularShader();
         const environment = new RoomEnvironment();
         const envMap = pmremGenerator.fromScene(environment).texture;
@@ -83,17 +58,61 @@ function initThreeJs() {
         pmremGenerator.dispose();
 
     });
-
     canvas.appendChild(renderer.domElement);
+}
 
+
+
+function loaderGltf(path, sclae, positionY) {
+    if (model != null) {
+        scene.remove(model)
+    }
+    gltfLoader = new GLTFLoader();
+    gltfLoader.load(path,
+        function (gltf) {
+
+            model = gltf.scene
+            model.scale.set(sclae, sclae, sclae)
+            model.position.set(0, positionY, 0)
+
+            scene.add(model);
+
+        })
 
 }
+
+
+
+
+loaderGltf('../assets/gltf/Island.gltf', .08, .2)
+
+
+function klassikGltf() {
+    $(".obj").click(function () {
+        loaderGltf(
+            `../assets/gltf/${$(this).attr('data-name')}.gltf`,
+            $(this).attr('data-scale'),
+            $(this).attr('data-positionY'),
+           
+        );
+        var data = $(this).attr('data-title');
+        console.log(data);
+        $("#TitleGltf").text(data);
+    });
+
+
+   
+}
+
+
+
+
 
 function lightGltf() {
     const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);
     scene.add(AmbientLight);
 
-    const DirectionalLight = new THREE.DirectionalLight(0xFFFFFF, 0.1);
+    const DirectionalLight = new THREE.DirectionalLight(0xFFFFFF, 1);
     scene.add(DirectionalLight);
 }
 
@@ -122,27 +141,6 @@ function controlsGltf() {
 
     controls.update();
 }
-
-function loaderGltf() {
-
-    gltfLoader = new GLTFLoader(manager);
-    gltfLoader.load(
-        '../assets/gltf/totem.gltf',
-        function (gltf) {
-            model = gltf.scene
-    
-            model.scale.set(.5, .5, .5)
-            model.position.set(0, -.7, 0)
-          
-            $(".cssload-loader").delay(400).fadeOut("slow");
-
-            scene.add(model);
-        }, onProgress, onError)
-    
-}
-
-
-
 function animate() {
     if (model) {
         model.rotation.y += 0.001;
