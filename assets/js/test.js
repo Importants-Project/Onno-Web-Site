@@ -64,7 +64,7 @@ function initThreeJs() {
 
 
 function loaderGltf(path, sclae, positionY) {
-    if (model !== null) {
+    if (model != null) {
         scene.remove(model)
     }
     gltfLoader = new GLTFLoader();
@@ -80,9 +80,6 @@ function loaderGltf(path, sclae, positionY) {
         })
 
 }
-
-
-
 
 loaderGltf('../assets/gltf/Island.gltf', .08, .2)
 
@@ -103,10 +100,6 @@ function klassikGltf() {
 
    
 }
-
-
-
-
 
 function lightGltf() {
     const AmbientLight = new THREE.AmbientLight(0xFFFFFF, 1);
