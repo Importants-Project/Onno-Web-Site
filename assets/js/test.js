@@ -94,6 +94,9 @@ function klassikGltf() {
         );
         var titleData = $(this).attr('data-title');
         $("#TitleGltf").text(titleData);
+
+        var textData = $(this).attr('data-text');
+        $("#TextGltf").html(textData);
     });
 
 
