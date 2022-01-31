@@ -64,7 +64,7 @@ function initThreeJs() {
 
 
 function loaderGltf(path, sclae, positionY) {
-    if (model != null) {
+    if (model !== null) {
         scene.remove(model)
     }
     gltfLoader = new GLTFLoader();
