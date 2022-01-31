@@ -3017,3 +3017,6 @@ footer.footer {
 .comment-form [class*="col-"] {
   padding-left: 10px;
   padding-right: 10px; }
+.obj{
+  cursor: pointer;
+}

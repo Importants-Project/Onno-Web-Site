@@ -92,9 +92,8 @@ function klassikGltf() {
             $(this).attr('data-positionY'),
            
         );
-        var data = $(this).attr('data-title');
-        console.log(data);
-        $("#TitleGltf").text(data);
+        var titleData = $(this).attr('data-title');
+        $("#TitleGltf").text(titleData);
     });
 
 
