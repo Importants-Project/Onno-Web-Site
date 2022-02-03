@@ -629,5 +629,63 @@
 
 		google.maps.event.addDomListener( window, 'load', initialize );
 	}
+	
+	var url = $("#cartoonVideo").attr('src');
+    
+    /* Assign empty url value to the iframe src attribute when
+    modal hide, which stop the video playing */
+    $("#exampleModalLong").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+    /* Assign the initially stored url back to the iframe src
+    attribute when modal is displayed again */
+    $("#exampleModalLong").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+
+// 	$('.menu > li')
+// 	.click(function (e) {
+// $('.menu > li')
+// 	.removeClass('active');
+// $(this).addClass('active');
+// });
+
+
+ /* Code for changing active 
+            link on clicking */
+            var btns = 
+                $(" .menu li");
+  
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click",
+                                      function () {
+                    var current = document
+                        .getElementsByClassName("active");
+  
+                    current[0].className = current[0]
+                        .className.replace(" active", "");
+  
+                    this.className += " active";
+                });
+            }
+  
+            /* Code for changing active 
+            link on Scrolling */
+            $(window).scroll(function () {
+                var distance = $(window).scrollTop();
+                $('.page-section').each(function (i) {
+  
+                    if ($(this).position().top 
+                        <= distance + 250) {
+                          
+                            $('.menu li.active')
+                                .removeClass('active');
+  
+                            $('.menu li').eq(i)
+                                .addClass('active');
+                    }
+                });
+            }).scroll();
 
 }( jQuery ) );

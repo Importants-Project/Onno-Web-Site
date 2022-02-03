@@ -85,6 +85,8 @@ loaderGltf('../assets/gltf/Island.gltf', .08, .2)
 
 
 function klassikGltf() {
+
+    
     $(".obj").click(function () {
         loaderGltf(
             `../assets/gltf/${$(this).attr('data-name')}.gltf`,
