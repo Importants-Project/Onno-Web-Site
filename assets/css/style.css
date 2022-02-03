@@ -3026,25 +3026,30 @@ footer.footer {
 
 
 
+
 @media only screen and (max-width:1280px){
   #cartoonVideo{
-    height:553px !important;
-    width: 980px !important;
+    height:553px ;
+    width: 980px ;
   }
   .modal-dialog{
-    height:553px !important;
-    width: 980px !important;
+    width: 980px ;
+    height:553px ;
     margin: auto;
   }
 }
 
-
-#cartoonVideo{
-  height:720px;
-  width: 1280px;
+@media only screen and (min-width:1281px){
+  #cartoonVideo{
+    height:720px;
+    width: 1280px;
+    margin: auto;
+  }
+  
+  .modal-dialog{
+    height:720px;
+    width: 1280px;
+  }
 }
 
-.modal-dialog{
-  height:720px;
-  width: 1280px;
-}
+

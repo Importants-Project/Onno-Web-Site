@@ -119,14 +119,14 @@
     visibility: hidden; }
     header .main-menu .menu li {
       margin: 0 20px; }
-      header .main-menu .menu li.menu-item-has-children:after {
+      /* header .main-menu .menu li.menu-item-has-children:after {
         content: '\f107';
         font: normal normal normal 14px/1 FontAwesome;
         position: absolute;
         top: 7px;
         right: 0;
         display: inline-block;
-        color: #fff; }
+        color: #fff; } */
       header .main-menu .menu li .sub-menu {
         display: none;
         background-color: transparent;

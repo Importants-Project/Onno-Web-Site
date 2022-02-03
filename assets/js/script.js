@@ -670,6 +670,7 @@
                 });
             }
   
+			
             /* Code for changing active 
             link on Scrolling */
             $(window).scroll(function () {
