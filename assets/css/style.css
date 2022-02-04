@@ -1175,12 +1175,12 @@ body {
   position: absolute;
   width: 100%;
   transition: all 0.3s ease-out; }
-  .header-line-wrapper.affix-top header {
+   .header-line-wrapper.affix-top header {
     background-color: #1e1d32;
     height: 100px;
-    transition: all 0.3s ease-out; }
-    .header-line-wrapper.affix-top header .logo img {
-      max-width: 55%; }
+    transition: all 0.3s ease-out; } 
+   /* .header-line-wrapper.affix-top header .logo img {
+      max-width: 55%; }*/
     .header-line-wrapper.affix-top header .main-menu .menu > li {
       line-height: 100px; }
     .header-line-wrapper.affix-top header .right-bl .search-wrapper {
@@ -3053,3 +3053,6 @@ footer.footer {
 }
 
 
+.logoImgOnno{
+  width: 20%;
+}
