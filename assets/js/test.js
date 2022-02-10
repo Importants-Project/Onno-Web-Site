@@ -81,7 +81,7 @@ function loaderGltf(path, sclae, positionY) {
 
 }
 
-loaderGltf('../assets/gltf/Island.gltf', .08, .2)
+loaderGltf('../assets/gltf/Island.gltf', .07, .2)
 
 
 function klassikGltf() {

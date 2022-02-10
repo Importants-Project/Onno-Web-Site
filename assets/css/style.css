@@ -534,10 +534,11 @@ img {
       color: #fff;
       transition: all 0.3s ease-out; }
   .btn.header-btn {
-    width: 220px;
-    height: 60px;
-    line-height: 59px;
+    width: 150px;
+    height: 30px;
+    line-height: 29px;
     overflow: hidden;
+    margin: -8px 0 0;
     position: relative;
     z-index: 1;
     display: inline-block;
@@ -1177,14 +1178,14 @@ body {
   transition: all 0.3s ease-out; }
    .header-line-wrapper.affix-top header {
     background-color: #1e1d32;
-    height: 120px;
+    height: 70px;
     transition: all 0.3s ease-out; } 
    /* .header-line-wrapper.affix-top header .logo img {
       max-width: 55%; }*/
-    .header-line-wrapper.affix-top header .main-menu .menu > li {
+    /* .header-line-wrapper.affix-top header .main-menu .menu > li {
       line-height: 100px; }
-    .header-line-wrapper.affix-top header .right-bl .search-wrapper {
-      line-height: 100px; }
+     .header-line-wrapper.affix-top header .right-bl .search-wrapper {
+      line-height: 100px; }  */
   .header-line-wrapper.affix-top .fixed-top {
     position: fixed !important;
     top: 0;
@@ -1194,7 +1195,7 @@ body {
 header {
   background-color: rgba(24, 23, 40, 0.8);
   box-shadow: 3.5px 6.1px 30px rgba(0, 0, 0, 0.57);
-  height: 140px; }
+  height: 70px; }
   header.header-wrapper {
     position: absolute;
     top: 0;
@@ -1470,7 +1471,7 @@ header {
       opacity: 1;
       visibility: visible; }
     .tm-tabs .nav-tabs li.active:hover .nav-title {
-      color: #fff; }
+      /* color: #fff;*/ } 
     .tm-tabs .nav-tabs li a {
       outline: none;
       text-decoration: none;
@@ -1500,7 +1501,7 @@ header {
           bottom: 0;
           opacity: 0;
           visibility: hidden;
-          background-image: linear-gradient(to right, rgba(0, 180, 214, 0.64) 0%, rgba(124, 105, 227, 0.64) 100%); }
+          /* background-image: linear-gradient(to right, rgba(0, 180, 214, 0.64) 0%, rgba(124, 105, 227, 0.64) 100%); */} 
       .tm-tabs .nav-tabs li a .nav-header-bl {
         text-transform: uppercase; }
         .tm-tabs .nav-tabs li a .nav-header-bl .nav-title {
@@ -3054,5 +3055,5 @@ footer.footer {
 
 
 .logoImgOnno{
-  width: 20%;
+  width: 12%;
 }
