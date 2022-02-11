@@ -9,10 +9,13 @@
     <!-- Favicon -->
     <!-- <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon"> -->
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="./assets/fonts/css/font-awesome.min.css" />
+   
+  <link rel="stylesheet" href="./assets/plugins/fancybox/jquery.fancybox.min.css"  />
     <!-- Bootstrap-->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <!-- Style -->
@@ -194,34 +197,39 @@
         });
     </script>
 
-<link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image./assets/favicon/png" sizes="192x192"  href="./assets/favicon/android-icon-192x192.png">
-<link rel="icon" type="image./assets/favicon/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image./assets/favicon/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
-<link rel="icon" type="image./assets/favicon/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="./assets/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
     <!-- PRELOADER START -->
-    <div class="loader-wrapper">
-        <div class='cssload-loader'>
+    <div class="loader-wrapper  ">
+        <div class="cssload-loader  " style="width: 20%; ">
+            <img class="loaderImg" src="./assets/images/logo@4x.png" alt="">
+            <!-- <img src="./assets/gltf/images/logo.png"  alt=""> -->
+
+        </div>
+
+        <!-- <div class='cssload-loader'>
             <div class='cssload-inner cssload-one'></div>
             <div class='cssload-inner cssload-two'></div>
             <div class='cssload-inner cssload-three'></div>
-
-        </div>
+        </div>  -->
     </div>
     <!-- PRELOADER END -->
     <!-- HEADER START -->
@@ -229,19 +237,17 @@
         <header class="header-wrapper fixed-top plr100">
             <div class="table height-100p">
                 <div class="table-row table-header">
-                    <div class="table-cell valign-middle text-left logoImgOnno" >
+                    <div class="table-cell valign-middle text-left logoImgOnno">
                         <a href="index.html" class="logo">
-                            <img  src="./assets/images/logo@4x.png" alt="" class="img-responsive inline-block">
+                            <img src="./assets/images/logo@4x.png" alt="" class="img-responsive inline-block">
                         </a>
                     </div>
-                    <!-- <div class="table-cell valign-middle text-center vm-sm">
-                       
-                    </div> -->
+                   
                     <div class="table-cell valign-middle text-right">
                         <div class="right-bl" style="    display: flex;
                         align-items: center;
                         justify-content: end;">
-                             <div class="main-menu" style="margin: 0 30px 0 0;">
+                            <div class="main-menu" style="margin: 0 30px 0 0;">
                                 <span class="toggle_menu">
                                     <span></span>
                                 </span>
@@ -255,103 +261,25 @@
                                         <a href="#assets">
                                             ASSETS
                                         </a>
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="404.html">404</a>
-                                            </li>
-                                            <li>
-                                                <a href="faq.html">FAQ</a>
-                                            </li>
-                                            <li class="menu-item-has-children">
-                                                <a href="team.html">Team</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="single-team.html">Member profile</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="typography.html">Typography</a>
-                                            </li>
-                                            <li>
-                                                <a href="price.html">Pricing plans</a>
-                                            </li>
-                                            <li>
-                                                <a href="testimonials.html">Testimonials</a>
-                                            </li>
-                                            <li>
-                                                <a href="statistic.html">Statistic</a>
-                                            </li>
-                                        </ul> -->
                                     </li>
-                                    <!-- <li class="inline-block menu-item-has-children"> -->
-                                        <!-- <a href="#testimonial">
-                                            TESTIMONIALS
-                                        </a> -->
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="gallery-regular.html">Gallery Regular</a>
-                                            </li>
-                                            <li>
-                                                <a href="gallery-masonry.html">Gallery Masonry</a>
-                                            </li>
-                                            <li>
-                                                <a href="gallery-full.html">Gallery Fullwidth</a>
-                                            </li>
-                                            <li>
-                                                <a href="gallery-extended.html">Gallery Extended</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-image.html">Single image</a>
-                                            </li>
-                                        </ul> -->
-                                    <!-- </li> -->
+                                 
                                     <li class="inline-block menu-item-has-children">
                                         <a href="#gallery">
                                             Gallery
                                         </a>
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="single-game.html">Single game</a>
-                                            </li>
-                                        </ul> -->
+                                       
                                     </li>
                                     <li class="inline-block menu-item-has-children">
                                         <a href="#faq">
                                             FAQ
                                         </a>
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="blog-full.html">Blog Fullwidth</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-left.html">Blog Left sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-right.html">Blog Right sidebar</a>
-                                            </li>
-                                        </ul> -->
+                                       
                                     </li>
-                                    <!-- <li class="inline-block">
-                                        <a href="#contact">
-                                            Contact
-                                        </a>
-                                    </li> -->
                                 </ul>
                             </div>
-                            <!-- <div class="search-wrapper inline-block valign-middle">
-                                <i class="fa fa-search color-white fsize-28" aria-hidden="true"></i>
-                                <form class="search-content" action="#">
-                                    <input type="text" placeholder="Search Keyword...">
-                                    <button class="color-white">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </form>
-                            </div> -->
-                            <a target='_blank' href="https://discord.com/invite/BGtUWbkp" class="btn header-btn  color-white hidden-sm hidden-xs">
+                            
+                            <a target='_blank' href="https://discord.com/invite/BGtUWbkp"
+                                class="btn header-btn  color-white hidden-sm hidden-xs">
                                 Join us Now
                             </a>
                         </div>
@@ -919,7 +847,7 @@
             div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
                 font-family: 'Roboto', 'Arial';
                 color: #ffffff;
-                font-size: 87.5%;
+                font-size: 147.5%;
                 text-shadow: none;
                 line-height: 1.5;
                 font-weight: normal;
@@ -1143,7 +1071,8 @@
                                                     data-plugin="rendered">
                                                     <div id="n2-ss-4item2"
                                                         class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">AR & VR BASED METAVERSE FOR GAMERS</div>
+                                                        style="display:block;"> AR and VR based metaverse for gamers
+                                                    </div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
                                                     style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
@@ -1161,10 +1090,7 @@
                                                     data-plugin="rendered">
                                                     <div
                                                         class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
-                                                        <!-- <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip
-                                                            flank short loin strip steak prosciutto
-                                                            <br /> leberkas jowl fatback. Alcatra kielbasa sausage, turkey short
-                                                            ribs shank bresaola.</p> -->
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow"></p>
                                                     </div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
@@ -1198,9 +1124,9 @@
                                     class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-16">
                                     <div class="n2-ss-slide-background n2-ow" data-mode="fill">
                                         <img data-hash="df538617dc01fb19a0bb4e642cc11f2d"
-                                            data-desktop="./assets/plugins/slider/images/slide-2.jpg" data-blur="0"
+                                            data-desktop="./assets/plugins/slider/images/slide-2.png" data-blur="0"
                                             data-opacity="100" data-x="50" data-y="50"
-                                            src="./assets/plugins/slider/images/slide-2.jpg" alt="" />
+                                            src="./assets/plugins/slider/images/slide-2.png" alt="" />
                                     </div>
                                     <div class="n2-ss-layers-container n2-ow" data-csstextalign="center">
                                         <div class="n2-ss-layer n2-ow" style="overflow:visible;"
@@ -1232,7 +1158,8 @@
                                                     data-plugin="rendered">
                                                     <div id="n2-ss-4item5"
                                                         class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow"
-                                                        style="display:block;">GET YOUR OWN</div>
+                                                        style="display:block;">
+                                                    </div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
                                                     style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal"
@@ -1250,7 +1177,7 @@
                                                     data-plugin="rendered">
                                                     <div id="n2-ss-4item6"
                                                         class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">FLOATING ISLAND</div>
+                                                        style="display:block;">START A CLAN OR JOIN AN EXISTING ONE</div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
                                                     style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
@@ -1270,10 +1197,10 @@
                                                         class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                                         <p
                                                             class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">
-                                                            The Onnoverse is composed of 7 layers of the heavens. In
-                                                            each layer, there are different floating islands that you
-                                                            can own. Collect objects airdropped in various parts of the
-                                                            world and move them to your floating island to decorate it.
+                                                            Gamers can start their own clans or join existing ones to
+                                                            play with their NFTs, talk about different games and have
+                                                            fun. Each clan will have floating islands of their own in
+                                                            VR.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -1309,9 +1236,9 @@
                                     class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-17">
                                     <div class="n2-ss-slide-background n2-ow" data-mode="fill">
                                         <img data-hash="daeb09696afe190d4a842f033c14d69b"
-                                            data-desktop="./assets/plugins/slider/images/slide-3.png" data-blur="0"
+                                            data-desktop="./assets/plugins/slider/images/slide-3.jpg" data-blur="0"
                                             data-opacity="100" data-x="50" data-y="50"
-                                            src="./assets/plugins/slider/images/slide-3.png" alt="" />
+                                            src="./assets/plugins/slider/images/slide-3.jpg" alt="" />
                                     </div>
                                     <div class="n2-ss-layers-container n2-ow" data-csstextalign="center">
                                         <div class="n2-ss-layer n2-ow" style="overflow:visible;"
@@ -1343,7 +1270,7 @@
                                                     data-plugin="rendered">
                                                     <div id="n2-ss-4item9"
                                                         class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow"
-                                                        style="display:block;">START YOUR CLAN</div>
+                                                        style="display:block;"></div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
                                                     style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal"
@@ -1361,7 +1288,7 @@
                                                     data-plugin="rendered">
                                                     <div id="n2-ss-4item10"
                                                         class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">OR JOIN ANY EXISTING ONE</div>
+                                                        style="display:block;">UNLOCK COOL FEATURES</div>
                                                 </div>
                                                 <div class="n2-ss-layer n2-ow"
                                                     style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
@@ -1381,10 +1308,7 @@
                                                         class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                                         <p
                                                             class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">
-                                                            Gamers can start their own clans or join existing ones to
-                                                            play with their NFTs, talk about different games and have
-                                                            fun. Each clan will get a floating island of their own once
-                                                            the minimum numbers are met.
+                                                            Collect various items in the real world and use them in the metaverse. Some rare objects will unlock very cool features that will make you and your avatar stand out in the Onnoverse
                                                         </p>
                                                     </div>
                                                 </div>
@@ -1632,7 +1556,7 @@
                 <i class="fa fa-twitter color-3 change" aria-hidden="true"></i>
             </a>
 
-            <a  target="_blank" href="https://discord.com/invite/BGtUWbkp" class="social discord ">
+            <a target="_blank" href="https://discord.com/invite/BGtUWbkp" class="social discord ">
                 <i class=' fab fa-discord color-3 change' aria-hidden="true"></i>
             </a>
         </div>
@@ -1644,7 +1568,7 @@
             <div class="row">
                 <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
                     <div class="title color-white">
-                       Onnoverse Assets
+                        Onnoverse Assets
                     </div>
                     <div class="subtitle">
                         Onnoverse Assets
@@ -1657,8 +1581,8 @@
                     <div class="tabs-nav">
                         <ul class="list-inline nav nav-tabs tabs-slider">
                             <li class="active col-lg-3 col-md-3">
-                                <a class="obj"  data-title='Island KEY' data-scale='.07'
-                                    data-positionY=".2" data-name='Island' href="#tab-item-1" data-toggle="tab" data-text="
+                                <a class="obj" data-title='Island KEY' data-scale='.07' data-positionY=".2"
+                                    data-name='Island' href="#tab-item-1" data-toggle="tab" data-text="
                                     <p>Onnoverse is a world with a lot of floating islands in the sky. Island keys are used to unlock these islands which will give you the experience of a lifetime.</p>
                                     <p>Each clan will also get a floating island of its own. As the number of clan members increases, some new floating islands will unlock to reside them. Not all floating islands are the same and each one will create a new experience for its residents.</p>
                                     ">
@@ -1669,13 +1593,13 @@
                                         <div class="nav-title color-white">
                                             ISLAND KEY
                                         </div>
-                                        
+
                                     </div>
                                 </a>
                             </li>
                             <li class="col-lg-3 col-md-3">
-                                <a class="obj"  data-title='ONNO COIN' href="#tab-item-2" data-toggle="tab" data-scale='.012'
-                                    data-positionY="0" data-name='Coin'   data-text="
+                                <a class="obj" data-title='ONNO COIN' href="#tab-item-2" data-toggle="tab"
+                                    data-scale='.012' data-positionY="0" data-name='Coin' data-text="
                                     <p>Onno coins can only be collected in the ON (AR) world and be used in the NO (VR) world of the Onnoverse. You may unlock or upgrade certain features by using Onno coins.</p>
                                     <p>Onno coins can also be used in order to achieve certain goals collectively. Clan members can use their collected coins in order to unlock some cool features for their clan's floating islands such as to ascend them to the sky and etc.</p>
                                     ">
@@ -1686,17 +1610,16 @@
                                         <div class="nav-title color-white">
                                             ONNO COIN
                                         </div>
-                                       
+
                                     </div>
                                 </a>
                             </li>
                             <li class="col-lg-3 col-md-3">
-                                <a class="obj"  data-title='ONNOBOARD'  href="#tab-item-3" data-toggle="tab" data-scale='.7'
-                                    data-positionY="-.6" data-name='OnnoMan' 
-                                    data-text="
+                                <a class="obj" data-title='ONNOBOARD' href="#tab-item-3" data-toggle="tab"
+                                    data-scale='.7' data-positionY="-.6" data-name='OnnoMan' data-text="
                                     <p>Onnoboards are the means of transportation in the Onnoverse. They're used to fly your avatar both in the ON (AR) and the NO (VR) world of the Onnoverse.</p>
                                     <p>Onnoboards are also customizable. Everyone in the Onnoverse gets the basic version of onnoboard however you may  customize the color, material, maneuver, speed and other features of the onnoboard by getting a Fractal NFT.</p>
-                                    " >
+                                    ">
                                     <div class="img-wrap">
                                         <img src="./assets/gltf/images/OnnoMan.png" alt="">
                                     </div>
@@ -1704,17 +1627,16 @@
                                         <div class="nav-title color-white">
                                             ONNOBOARD
                                         </div>
-                                        
+
                                     </div>
                                 </a>
                             </li>
                             <li class="col-lg-3 col-md-3">
-                                <a class="obj"  data-title='COLORFUL CRYSTALS'  href="#tab-item-4" data-toggle="tab" data-scale='.5'
-                                    data-positionY="-.7" data-name='kristalRed' 
-                                    data-text="
+                                <a class="obj" data-title='COLORFUL CRYSTALS' href="#tab-item-4" data-toggle="tab"
+                                    data-scale='.5' data-positionY="-.7" data-name='kristalRed' data-text="
                                     <p>Colorful crystals are the source of energy for the floating islands in the Onnoverse. The crystals come in three different colors; red, blue, and green.</p>
                                     <p>Different colors unlock different features of the floating islands. Some of them are common and some are rare. We'll drop these crystals to the different parts of the real world (like Pokemon Go) and notify the Onnoverse residents to collect them.</p>
-                                    " >
+                                    ">
                                     <div class="img-wrap">
                                         <img src="./assets/gltf/images/green.png" alt="">
                                     </div>
@@ -1722,17 +1644,16 @@
                                         <div class="nav-title color-white">
                                             COLORFUL CRYSTALS
                                         </div>
-                                       
+
                                     </div>
                                 </a>
                             </li>
                             <li class="col-lg-3 col-md-3">
-                                <a class="obj"  data-title=' MYSTERY BOX'  href="#tab-item-5" data-toggle="tab" data-scale='1.3'
-                                    data-positionY="-.4" data-name='chest' 
-                                    data-text="
+                                <a class="obj" data-title=' MYSTERY BOX' href="#tab-item-5" data-toggle="tab"
+                                    data-scale='1.3' data-positionY="-.4" data-name='chest' data-text="
                                     <p>Mystery boxes contain special items that are specific to the Onnoverse. Unlike any other items in the Onnoverse, all mystery boxes contain rare items which can be sold or bought.</p>
                                     <p>Just like colorful crystals, mystery boxes will also be dropped to the different parts of the real world (like Pokemon Go). Once collected, you will get a special NFT in your wallet which will be a rare item that can be used in the Onnoverse.</p>
-                                    " >
+                                    ">
                                     <div class="img-wrap">
                                         <img src="./assets/gltf/images/chest.png" alt="">
                                     </div>
@@ -1740,7 +1661,7 @@
                                         <div class="nav-title color-white">
                                             MYSTERY BOX
                                         </div>
-                                       
+
                                     </div>
                                 </a>
                             </li>
@@ -1779,17 +1700,22 @@
                                     ISLAND KEY
                                 </div>
                                 <div id="TextGltf" class="mt50 lheight-26 fweight-300">
-                                    <p>Onnoverse is a world with a lot of floating islands in the sky. Island keys are used to unlock these islands which will give you the experience of a lifetime.</p>
-                                    <p>Each clan will also get a floating island of its own. As the number of clan members increases, some new floating islands will unlock to reside them. Not all floating islands are the same and each one will create a new experience for its residents.</p>
+                                    <p>Onnoverse is a world with a lot of floating islands in the sky. Island keys are
+                                        used to unlock these islands which will give you the experience of a lifetime.
+                                    </p>
+                                    <p>Each clan will also get a floating island of its own. As the number of clan
+                                        members increases, some new floating islands will unlock to reside them. Not all
+                                        floating islands are the same and each one will create a new experience for its
+                                        residents.</p>
                                 </div>
-                                 <div class="mt60 table g-bottom">
-                                  <!--  <div class="table-cell valign-middle">
+                                <div class="mt60 table g-bottom">
+                                    <!--  <div class="table-cell valign-middle">
                                         <a href="single-game.html" class="btn gradient color-white plr60 ptb19">
                                             Read more
                                         </a>
                                     </div>-->
 
-                                </div> 
+                                </div>
                             </div>
                             <div class="tab-img col-lg-6 col-md-12 col-sm-12 col-xs-12 pr0 equal-height">
                                 <div id="gltfShow" class="image-bl">
@@ -1803,7 +1729,7 @@
         </div>
     </section>
     <!-- GAME SECTION END -->
-    
+
     <!-- TESTIMONIAL SECTION START -->
     <!-- <section id='testimonial' class="pt150 pb170 page-section">
         <div class="container">
@@ -1890,7 +1816,7 @@
             <div class="row">
                 <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
                     <div class="title color-white">
-                         gallery
+                        gallery
                     </div>
                     <div class="subtitle">
                         gallery
@@ -1919,32 +1845,11 @@
                             Xbox one
                         </div>
                     </div> -->
-                    <div class="item_container relative mt40">
+                    <div class="item_container relative mt40 gallery">
                         <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="item-content">
                                 <div class="image-bl">
-                                    <img src="./assets/images/gallery/gallery-1.jpg" alt="">
-                                </div>
-                                <div class="item-info">
-                                    <div class="info-bl text-center">
-                                        <a href="#" data-trim="40" 
-                                            class="item-title color-white fsize-24 fweight-700 font-agency uppercase">
-                                            Using Banner Stands To Increase Trade
-                                        </a>
-                                        <div class="text-center mt30">
-                                            <a href="" class="item-btn inline-block valign-middle" data-toggle="modal" data-target="#exampleModalLong">
-                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                            </a>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item playstation-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="item-content">
-                                <div class="image-bl">
-                                    <img src="./assets/images/gallery/gallery-2.jpg" alt="">
+                                    <img src="./assets/images/gallery/gallery-1.png"  alt="">
                                 </div>
                                 <div class="item-info">
                                     <div class="info-bl text-center">
@@ -1953,10 +1858,31 @@
                                             Using Banner Stands To Increase Trade
                                         </a>
                                         <div class="text-center mt30">
-                                            <a href="#" class="item-btn inline-block valign-middle">
+                                            <a  href="./assets/images/gallery/gallery-1.png"   class="a-link item-btn inline-block valign-middle" >
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </a>
-                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item playstation-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="item-content">
+                                <div class="image-bl">
+                                    <img src="./assets/images/gallery/gallery-2.png" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <div class="info-bl text-center">
+                                        <a href="#" data-trim="40"
+                                            class="item-title color-white fsize-24 fweight-700 font-agency uppercase">
+                                            Using Banner Stands To Increase Trade
+                                        </a>
+                                        <div class="text-center mt30">
+                                            <a  href="./assets/images/gallery/gallery-2.png"  class="a-link item-btn inline-block valign-middle">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -1974,10 +1900,11 @@
                                             Using Banner Stands To Increase Trade
                                         </a>
                                         <div class="text-center mt30">
-                                            <a href="#" class="item-btn inline-block valign-middle">
-                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            <a href="#" class=" item-btn inline-block valign-middle" data-toggle="modal"
+                                            data-target="#exampleModalLong">
+                                                <i class="fa fa-play" aria-hidden="true"></i>
                                             </a>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
@@ -1986,7 +1913,7 @@
                         <div class="item steam xbox-one col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div class="item-content">
                                 <div class="image-bl">
-                                    <img src="./assets/images/gallery/gallery-3.jpg" alt="">
+                                    <img src="./assets/images/gallery/gallery-3.png" style="height: 387px;" alt="">
                                 </div>
                                 <div class="item-info">
                                     <div class="info-bl text-center">
@@ -1995,17 +1922,17 @@
                                             Using Banner Stands To Increase Trade
                                         </a>
                                         <div class="text-center mt30">
-                                            <a href="#" class="item-btn inline-block valign-middle">
+                                            <a href="./assets/images/gallery/gallery-3.png"  class="a-link item-btn inline-block valign-middle">
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </a>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -2034,7 +1961,7 @@
                 <div class="faq-container mt90">
                     <div class="left-column-1 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="table">
-                            <div class="table-row" >
+                            <div class="table-row">
                                 <div class="counter-round table-cell valign-top">
                                     <div class="counter-bl">
                                         01
@@ -2043,7 +1970,8 @@
                                 <div class="counter-content table-cell valign-top">
                                     <div class="counter-title">What makes Onnoverse different?</div>
                                     <div class="counter-text mt25">
-                                        Onnoverse is the only metaverse on Solana that's on AR, VR, and desktop. You may move your NFT avatars from AR to VR & vice-versa.
+                                        Onnoverse is the only metaverse on Solana that's on AR, VR, and desktop. You may
+                                        move your NFT avatars from AR to VR & vice-versa.
                                     </div>
                                 </div>
                             </div>
@@ -2055,7 +1983,8 @@
                                 <div class="counter-content table-cell valign-top text-right">
                                     <div class="counter-title">Why should I join Onnoverse?</div>
                                     <div class="counter-text mt25">
-                                        Onnoverse enables the users to interact with their 3D NFTs in an immersive environment. Play with your NFT in both AR and VR.
+                                        Onnoverse enables the users to interact with their 3D NFTs in an immersive
+                                        environment. Play with your NFT in both AR and VR.
                                     </div>
                                 </div>
                                 <div class="counter-round table-cell valign-top">
@@ -2077,7 +2006,8 @@
                                 <div class="counter-content table-cell valign-top">
                                     <div class="counter-title"> What's a clan?</div>
                                     <div class="counter-text mt25">
-                                        Clan is an unofficial group that connects gamers. You may start your own clan in the onnoverse or join an existing one.
+                                        Clan is an unofficial group that connects gamers. You may start your own clan in
+                                        the onnoverse or join an existing one.
                                     </div>
                                 </div>
                             </div>
@@ -2089,7 +2019,8 @@
                                 <div class="counter-content table-cell valign-top text-right">
                                     <div class="counter-title">What are onnoboards for?</div>
                                     <div class="counter-text mt25">
-                                        Onnoboards are used to fly your avatars both on AR and VR. You'll need to get a Fractal NFT in case you wish to customize your onnoboard.
+                                        Onnoboards are used to fly your avatars both on AR and VR. You'll need to get a
+                                        Fractal NFT in case you wish to customize your onnoboard.
                                     </div>
                                 </div>
                                 <div class="counter-round table-cell valign-top">
@@ -2144,12 +2075,12 @@
             <div class="row mb110">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <a href="index.html">
-                        <img  src="./assets/images/logo@4x.png" alt="">
+                        <img src="./assets/images/logo@4x.png" alt="">
                     </a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-right">
                     <ul class="footer-menu">
-                        <li >
+                        <li>
                             <a href="#home">
                                 Homepage
                             </a>
@@ -2169,7 +2100,7 @@
                                 Gallery
                             </a>
                         </li>
-                      
+
                         <li>
                             <a href="#faq">
                                 FAQ
@@ -2181,7 +2112,7 @@
                             </a>
                         </li> -->
                     </ul>
-                   
+
                     <div class="social-content mt30">
 
                         <div class="social-list">
@@ -2215,24 +2146,29 @@
 
 
     <!--MODAL START -->
-    <div  class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
         <div class="modal-dialog" style="  margin-top: 110px;" role="document">
-          <div class="modal-content "  style="background-color: transparent; border: none; box-shadow: none;">
-            <div class="modal-header"  style="border: none;">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"  style="color: #fff; opacity: 1; font-size: 40px; line-height: 0;">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body ">
-                <!-- width="1280px" height="720px" -->
-                    <iframe  id="cartoonVideo"  src="https://www.youtube.com/embed/BSNXwtJU0Kc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="modal-content " style="background-color: transparent; border: none; box-shadow: none;">
+                <div class="modal-header" style="border: none;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="color: #fff; opacity: 1; font-size: 40px; line-height: 0;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <!-- width="1280px" height="720px" -->
+                    <iframe id="cartoonVideo" src="https://www.youtube.com/embed/yfjb9cErVN4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
 
             </div>
-          
-          </div>
         </div>
-      </div>
-      <!--MODAL END -->
+    </div>
+    <!--MODAL END -->
     <a href="#" id="toTop" class="color-white">
         <i class="fa fa-angle-up fsize-14" aria-hidden="true"></i>
     </a>
@@ -2269,7 +2205,9 @@
 
     <script src="https://kit.fontawesome.com/2d810d4f39.js" crossorigin="anonymous"></script>
 
+    <script src="./assets/plugins/fancybox/jquery.fancybox.min.js" ></script>
 
+    <script src="./assets/plugins/fancybox/fancybox.js"></script>
 </body>
 
 </html>
