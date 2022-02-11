@@ -3950,6 +3950,9 @@ footer.footer .copyright {
     height: 553px;
     width: 980px;
   }
+
+  
+
   .modal-dialog {
     width: 980px;
     height: 553px;
@@ -3969,9 +3972,7 @@ footer.footer .copyright {
     margin: auto;
   }
 
-  #island canvas{
-    width: 100% !important;
-  }
+
 }
 
 @media only screen and (min-width: 1281px) {

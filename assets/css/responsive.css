@@ -51,7 +51,9 @@
     padding-right: 50px;
   }
 
- 
+  #island canvas{
+    width: 100% !important;
+  }
   /* Game section */
   .tm-tabs .tab-content {
     margin-left: 15px;
