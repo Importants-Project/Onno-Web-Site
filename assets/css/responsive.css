@@ -52,7 +52,9 @@
   }
 
   #island canvas{
+    margin: auto;
     width: 100% !important;
+    height: unset !important;
   }
   /* Game section */
   .tm-tabs .tab-content {
